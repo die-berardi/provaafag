@@ -38,7 +38,7 @@ private void OnTriggerExit(Collider other){
         {
             int coinsToSpawn = 10;
                 for(int i=0; i< coinsToSpawn; i++){
-               GameObject temp  = Instantiate(coinPrefab);
+               GameObject temp  = Instantiate(coinPrefab, transform);
                temp.transform.position = GetRandomPointInCollider(GetComponent<Collider>());
                 }
         }
@@ -54,7 +54,7 @@ private void OnTriggerExit(Collider other){
                     point = GetRandomPointInCollider(collider);
                 }
 
-                point.y = 1;
+                point.y = 2;
                 return point;
         }
 }
