@@ -142,7 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   rb: {fileID: 36996820}
-  horizontalMultiplayer: 1.5
+  horizontalMultiplier: 2
 --- !u!54 &36996820
 Rigidbody:
   m_ObjectHideFlags: 0

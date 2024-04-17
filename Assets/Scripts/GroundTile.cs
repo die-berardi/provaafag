@@ -6,7 +6,8 @@ public class GroundTile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-     groundSpawner = GameObject.FindObjectOfType<GroundSpawner>();   
+     groundSpawner = GameObject.FindObjectOfType<GroundSpawner>(); 
+     SpawnObstacle();  
     }
 
 private void OnTriggerExit(Collider other){
@@ -17,5 +18,16 @@ private void OnTriggerExit(Collider other){
     void Update()
     {
         
+    }
+
+    public GameObject ObstaclePrefab;
+
+    void SpawnObstacle(){
+        //Scegliere un punto a caso in cui creare l'ostacolo
+    int obstacleSpawnIndex = Random.Range(2,5);
+    Transform spawnPoint = transform.GetChild(obstacleSpawnIndex).transform;
+ 
+        //creare l'ostacolo nella posizione
+    Instantiate(ObstaclePrefab, spawnPoint.position, Quaternion.identity, transform);
     }
 }
