@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
-        if(transform.position.x < -20 || transform.position.x > 20){
+        if(transform.position.x < -30 || transform.position.x > 30){
             Die();
         }
     }
