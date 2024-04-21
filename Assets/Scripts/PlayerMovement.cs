@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
         if(!alive) return;
         Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
         Vector3 horizontalMove = transform.right * horizontalInput * speed * Time.fixedDeltaTime * horizontalMultiplier;
+        
         rb.MovePosition(rb.position + forwardMove + horizontalMove);
     }
 
