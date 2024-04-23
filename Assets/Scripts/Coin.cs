@@ -15,6 +15,7 @@ public class Coin : MonoBehaviour
             return;
         }
 
+        GameManager.inst.IncrementScore();
         Destroy(gameObject);
 
     }
