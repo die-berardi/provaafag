@@ -13,8 +13,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate(){
         if(!alive) return;
-        Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
-        Vector3 horizontalMove = transform.right * horizontalInput * speed * Time.fixedDeltaTime * horizontalMultiplier;
+        Vector3 forwardMove = -transform.forward * speed * Time.fixedDeltaTime;
+        Vector3 horizontalMove = -transform.right * horizontalInput * speed * Time.fixedDeltaTime * horizontalMultiplier;
         
         rb.MovePosition(rb.position + forwardMove + horizontalMove);
     }

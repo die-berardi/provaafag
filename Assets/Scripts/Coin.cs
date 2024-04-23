@@ -11,7 +11,7 @@ public class Coin : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        if(other.gameObject.name != "Car"){
+        if(!other.gameObject.CompareTag("Player")){
             return;
         }
 
@@ -27,6 +27,6 @@ public class Coin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0,0,turnSpeed * Time.deltaTime);
+        transform.Rotate(0,turnSpeed * Time.deltaTime,0);
     }
 }

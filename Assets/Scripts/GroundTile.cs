@@ -3,6 +3,12 @@ using UnityEngine;
 public class GroundTile : MonoBehaviour
 {
     GroundSpawner groundSpawner;
+    public Transform spawnPos1;
+    public Transform spawnPos2;
+    public Transform[] obstacleSpawn1; 
+
+    [SerializeField]
+    private int aidNumber;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,24 +27,46 @@ private void OnTriggerExit(Collider other){
         
     }
 
-    public GameObject ObstaclePrefab;
+    public GameObject[] ObstaclePrefab;
 
     void SpawnObstacle(){
         //Scegliere un punto a caso in cui creare l'ostacolo
-    int obstacleSpawnIndex = Random.Range(2,5);
-    Transform spawnPoint = transform.GetChild(obstacleSpawnIndex).transform;
+    //int obstacleSpawnIndex1 = Random.Range(2,5);
+    int obstacleSpawnIndex2 = Random.Range(5,8);
+    //Transform spawnPoint1 = transform.GetChild(obstacleSpawnIndex1).transform;
+    Transform spawnPoint2 = transform.GetChild(obstacleSpawnIndex2).transform;
  
         //creare l'ostacolo nella posizione
-    Instantiate(ObstaclePrefab, spawnPoint.position, Quaternion.identity, transform);
+        //int rnd1 = Random.Range(0,ObstaclePrefab.Length);
+        int rnd2 = Random.Range(0,ObstaclePrefab.Length);
+    //Instantiate(ObstaclePrefab[rnd1], spawnPoint1.position, Quaternion.identity, transform);
+    Instantiate(ObstaclePrefab[rnd2], spawnPoint2.position, Quaternion.identity, transform);
+
+    int spawnPositionIndex1 = Random.Range(0, obstacleSpawn1.Length);
+    int spawnPositionIndex2;
+
+    int rnd = Random.Range(0, ObstaclePrefab.Length);
+    Instantiate(ObstaclePrefab[rnd],obstacleSpawn1[spawnPositionIndex1].position, Quaternion.identity, transform);
+    do{
+        spawnPositionIndex2 = Random.Range(0, obstacleSpawn1.Length);
+    }while(spawnPositionIndex1 == spawnPositionIndex2);
+    Instantiate(ObstaclePrefab[rnd], obstacleSpawn1[spawnPositionIndex2].position, Quaternion.identity, transform);
+
+
+
+
     }
 
-    public GameObject coinPrefab;
+    public GameObject[] coinPrefab;
 
         void SpawnCoins()
         {
-            int coinsToSpawn = 10;
-                for(int i=0; i< coinsToSpawn; i++){
-               GameObject temp  = Instantiate(coinPrefab, transform);
+            
+                for(int i=0; i< aidNumber; i++){
+                    int rnd = Random.Range(0, coinPrefab.Length);
+               //     Vector3 spawnPos = new Vector3(Random.Range(spawnPos1.position.x , spawnPos2.position.x), gameObject.transform.position.y+2, Random.Range(spawnPos1.position.z, spawnPos2.position.z));
+               // GameObject temp  = Instantiate(coinPrefab[rnd],  spawnPos, Quaternion.identity);
+               GameObject temp  = Instantiate(coinPrefab[rnd],  transform);
                temp.transform.position = GetRandomPointInCollider(GetComponent<Collider>());
                 }
         }

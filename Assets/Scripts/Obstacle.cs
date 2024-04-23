@@ -12,7 +12,7 @@ public class Obstacle : MonoBehaviour {
 
     private void OnCollisionEnter (Collision collision)
     {
-        if (collision.gameObject.name == "Car") {
+        if (collision.gameObject.CompareTag("Player")) {
             // Kill the player
             playerMovement.Die();
         }
