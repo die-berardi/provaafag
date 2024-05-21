@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public void IncrementScore(){
         score++;
-        scoreText.text = "ITEMS: " + score;
+        scoreText.text = "Score: " + score;
     }
   private void Awake(){
     inst = this;
@@ -29,4 +30,8 @@ public class GameManager : MonoBehaviour
     {
         
     }
+
+  public void IniziaGioco() {
+    SceneManager.LoadScene(1);
+  }
 }
