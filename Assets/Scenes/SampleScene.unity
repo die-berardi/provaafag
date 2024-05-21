@@ -145,6 +145,8 @@ MonoBehaviour:
   horizontalMultiplier: 2
   deathMenu: {fileID: 0}
   music: {fileID: 0}
+  gameManager: {fileID: 0}
+  scoreText: {fileID: 0}
 --- !u!54 &36996820
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1250,6 +1252,8 @@ MonoBehaviour:
   horizontalMultiplier: 2
   deathMenu: {fileID: 789045889}
   music: {fileID: 1228119257}
+  gameManager: {fileID: 1286127342}
+  scoreText: {fileID: 646313836}
 --- !u!54 &1304931060
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1818,7 +1822,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1792115344
 MonoBehaviour:
   m_ObjectHideFlags: 0

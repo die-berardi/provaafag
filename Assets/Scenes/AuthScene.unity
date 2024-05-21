@@ -733,6 +733,7 @@ MonoBehaviour:
   passwordInput: {fileID: 1345783227}
   loginBtn: {fileID: 197392114}
   registerBtn: {fileID: 1066791988}
+  iniziaGiocoBtn: {fileID: 1700854164}
 --- !u!1 &896394008
 GameObject:
   m_ObjectHideFlags: 0
@@ -2015,6 +2016,7 @@ MonoBehaviour:
   passwordInput: {fileID: 1345783227}
   loginBtn: {fileID: 197392114}
   registerBtn: {fileID: 1066791988}
+  iniziaGiocoBtn: {fileID: 1700854164}
 --- !u!1 &2030117251
 GameObject:
   m_ObjectHideFlags: 0

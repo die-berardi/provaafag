@@ -16,6 +16,8 @@ public class PlayfabManager : MonoBehaviour
     public  Button loginBtn;
     public  Button registerBtn;
 
+    public GameObject iniziaGiocoBtn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,8 @@ public class PlayfabManager : MonoBehaviour
         loginBtn.onClick.AddListener(() => {
             LoginButton();
         });
+
+        iniziaGiocoBtn.SetActive(false );
     }
 
     void RegisterButton () {
@@ -70,6 +74,8 @@ public class PlayfabManager : MonoBehaviour
     void OnSuccessLogin (LoginResult result ) {
         Debug.Log("successfull logged in ");
         messageText.text = "Logged in!";
+        iniziaGiocoBtn.SetActive(true );
+
 
     }
 
