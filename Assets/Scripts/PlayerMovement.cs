@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,6 +11,13 @@ public class PlayerMovement : MonoBehaviour
 
     float horizontalInput;
     public float horizontalMultiplier = 2;
+
+    public GameObject deathMenu;
+
+    public AudioSource music;
+
+    public GameManager gameManager;
+    public TextMeshProUGUI scoreText;
 
     private void FixedUpdate(){
         if(!alive) return;
@@ -31,11 +39,24 @@ public class PlayerMovement : MonoBehaviour
     public void Die(){
         alive = false;
         //Restart the game
-       Invoke("Restart", 1);
+        deathMenu.SetActive(true);
+        Time.timeScale = 0;
+        music.Stop();
+        scoreText.text = "Your score:" + gameManager.score;
+
+
+
+
+    //    Invoke("Restart", 0);
     }
 
-    void Restart()
+    public void Restart()
 {
+    Time.timeScale = 1;
+    deathMenu.SetActive(false);
+    music.Play();
+
+    
      SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 }
 }

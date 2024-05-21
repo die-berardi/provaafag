@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public void IncrementScore(){
         score++;
-        scoreText.text = "ITEMS: " + score;
+        scoreText.text = "Score: " + score;
     }
   private void Awake(){
     inst = this;
@@ -32,6 +32,6 @@ public class GameManager : MonoBehaviour
     }
 
   public void IniziaGioco() {
-    SceneManager.LoadScene(0);
+    SceneManager.LoadScene(1);
   }
 }
