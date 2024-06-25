@@ -34,4 +34,9 @@ public class GameManager : MonoBehaviour
   public void IniziaGioco() {
     SceneManager.LoadScene(1);
   }
+
+  public void logout() {
+    SceneManager.LoadScene(0);
+  }
+
 }

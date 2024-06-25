@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public float horizontalMultiplier = 2;
 
     public GameObject deathMenu;
+    public GameObject pauseMenu;
 
     public AudioSource music;
 
@@ -59,4 +60,22 @@ public class PlayerMovement : MonoBehaviour
     
      SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 }
+
+    public void pause () {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0;
+        music.Stop();
+        // scoreText.text = "Your score:" + gameManager.score;
+    }
+
+    public void resume () {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1;
+        music.Play();
+    }
+
+     public void logout() {
+    SceneManager.LoadScene(0);
+  }
+
 }

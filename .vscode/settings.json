@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Mobile-project-endless-runner.sln"
+    "dotnet.defaultSolution": "mobile-project.sln"
 }
