@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     }
 
   public void IniziaGioco() {
+    Time.timeScale = 1f; 
     SceneManager.LoadScene(1);
   }
 
