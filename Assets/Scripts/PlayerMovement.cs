@@ -20,6 +20,11 @@ public class PlayerMovement : MonoBehaviour
     public GameManager gameManager;
     public TextMeshProUGUI scoreText;
 
+
+    void Start(){
+        Time.timeScale = 1f;
+    }
+
     private void FixedUpdate(){
         if(!alive) return;
         Vector3 forwardMove = -transform.forward * speed * Time.fixedDeltaTime;
